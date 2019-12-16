@@ -48,7 +48,7 @@
             <br>
             <button type="button" class="btn btn-secondary" onclick="listarMoto()">Listar Motos</button>
             <br>
-            <button type="button" class="btn btn-secondary" onclick="">Carrinho</button>
+            <button type="button" class="btn btn-secondary" onclick="comprarMoto()">Carrinho</button>
             <br>
           </div>
 
@@ -96,7 +96,7 @@
   <div class="container" id="TelaCadastro">
     <div class="row">
 
-      <div class="col-md-12">
+      <div class="col-md-12" align="center">
 
           <br>
           <br>
@@ -148,7 +148,7 @@
 
           <table class="table">
 
-              <theader id="headertemp">
+              <theader>
 
 
               </theader>
@@ -183,58 +183,59 @@
     </script>
   </div>
 
-  <div class="container" id="TelaCompra">
+  
+  <!-- tela comprar -->
+  <div class="container" id="tela_comprar">
     <div class="row">
+      <input type="button" class="btn btn-primary" value="Voltar" align="center" onclick="voltar()">
 
-      <div class="col-md-12">
-
-          <br>
-          <br>
-
-          <input type="button" class="btn btn-primary" value="Voltar" onclick="voltar()">  
-
-          <br>
-          <br>
-          
-          <br>
-
-          <div id="dados">
-
+        <div class="col-md-12" align="center">
+            <h2>Compra em Andamento</h2>
+            <br>
+            <h4>ID do Produto</h4>
+            <input type="text" class="form-control" id="id_cad_compra">
+            <br>
+            <h4>Nome do Produto</h4>
+            <input type="text" class="form-control" id="nome_compra">
+            <br>
+            <h4>Preço da Unidade</h4>
+            <input type="text" class="form-control" id="valor_unit_compra">
+            <br>
+            <h4>Quantidade Desejada</h4>
+            <input type="text" class="form-control" id="qtd_compra">
+            <br>
+            <input type="button" class="btn btn-lg btn-primary form-control" value="Adicionar ao Carrinho" onclick="compra_insert()"><br><br>
             
-
-          </div>
-
-          <script>
-          
-            dadosMoto_view();
-
-          </script>
-
-          <br>
-
-          <h4 class="campos">Quantidade</h4>
-          <input type="text" class="form-control" id="Compra_qtd">
-
-          <br>
-
-          <h4 class="campos">Valor Final</h4>
-          <input type="text" class="form-control" id="Compra_total">
-
-          <br>
-
-          <input type="button" class="btn btn-success"  value="Comprar" onclick="">
-
-          <br>
-          <br>
-         
-      </div>
-
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- tela carrinho -->
+<div class="container" id="tela_carrinho">
+    <script type="text/javascript">compra_view();</script>
+    <input type="button" class="btn btn-primary" value="Voltar" onclick="voltar()"> 
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Carrinho de Compras</h2><br><br>
+            <table class="table">
+                <thead>
+                    <th>ID do Produto</th>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <tr></tr>
+                </thead>
+                <tbody id = "compra_listagem"></tbody>
+            </table>
+            <h3>Valor Total do Carrinho:</h1>R$ <input type="text" id="total"><br><br><br>
+            <input type="button" class="btn btn-lg btn-primary form-control" value="Finalizar Compra" onclick="finalizar_compra();"><br><br>
+           
+        </div>
+    </div>
+</div>
+
+
  
 
 
